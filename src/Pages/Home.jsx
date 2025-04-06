@@ -29,14 +29,14 @@ export default function Home() {
         <div>
             <section>
                 
-                <div className='max-w-[1320px] mx-auto py-[50px]'>
+                <div className='max-w-[1320px] mx-auto py-[50px] sm:pb-0 border'>
 
-                    <div className='flex mt-[30px] items-center'>
-                        <div className='basis-[60%]'>
-                            <h1 className='text-7xl font-bold'>
+                    <div className='lg:flex mt-[30px]  sm:mt-[0px] items-center '>
+                        <div className='basis-[60%] sm:px-[40px] sm:py-0 '>
+                            <h1 className='text-7xl font-bold sm:text-[70px]'>
                                 The experience makes all the difference.
                             </h1>
-                            <p className='py-5 text-[#a49999] text-[24px]'>
+                            <p className='py-5 text-[#a49999] lg:text-[24px] sm:text-[18px]'>
                                 From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.
                             </p>
                             <div className='flex items-center gap-5'>
@@ -47,7 +47,7 @@ export default function Home() {
                                 <button className='border border-[#ccc] py-3 px-5 rounded'>OFFERS</button>
                             </div>
                         </div>
-                        <div className='basis-[40%]'>
+                        <div className='basis-[40%] sm:mt-[50px] border'>
                             <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="" className='w-full' />
                         </div>
                     </div>
@@ -80,17 +80,18 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='py-[25px] px-5'>
+            <section className='py-[25px] px-5 '>
                 <div className='max-w-[1320px]  mx-auto box-shadyo shadow-md '>
-                    <h1 className='text-center text-6xl font-bold py-5 '>Get difference Product</h1>
+                    <h1 className='text-center lg:text-6xl font-bold py-5 sm:text-3xl '>Get difference Product</h1>
                 </div>
 
-                <div className='max-w-full mx-auto grid grid-cols-5 mt-5 gap-[10px] p-5 bg-[#f6f1f1]'>
+                <div className='max-w-full mx-auto grid lg:grid-cols-5 sm:grid-cols-1 mt-5 gap-[10px] p-5 bg-[#f6f1f1]'>
 
 
 
 
                     {products.map((items, index) => {
+
                         return (
                             <Products pdata={items} key={index}/>
                         )
@@ -118,12 +119,12 @@ export default function Home() {
 function Products({pdata}) {
     return (
 
-        <div className=' bg-white rounded p-2 shadow-md '>
-                   <div className='relative shadow-md shadow-[#353535]'>
+        <div className=' bg-white rounded p-2 shadow-md border-3 py-2 px-5 w-[10]'>
+                   <div className='relative shadow-md shadow-[#353535] '>
                        <div className='absolute right-[15px] top-[10px] text-[#f35b5b]'>
                            <FaHeart className='text-3xl' />
                        </div>
-                       <img src={pdata.image} alt="" className='h-full  mx-auto' />
+                       <img src={pdata.image} alt="" className='h-full  mx-auto border' />
                    </div>
                    <div className=' p-3 mt-3 shadow-[#353535] '>
                        <h1 className='text-[18px] font-[500] items-center '>{pdata.slug}</h1>
