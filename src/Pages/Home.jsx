@@ -13,7 +13,7 @@ export default function Home() {
     let productsitems = () => {
         axios.get('https://wscubetech.co/ecommerce-api/products.php', {
             params: {
-                limit: 100,
+                limit: 15,
             }
         })
             .then((productsapi) => {
@@ -33,15 +33,15 @@ export default function Home() {
 
                         <div className='lg:flex mt-[30px]  sm:mt-[0px] items-center '>
                             <div className='basis-[60%] sm:px-[40px] sm:py-0 '>
-                                <h1 className='text-7xl font-bold sm:text-[70px]'>
+                                <h1 className='text-3xl lg:text-7xl font-bold sm:text-[70px] lg:text-start  lg:ps-0 sm:ps-5 text-center'>
                                     The experience makes all the difference.
                                 </h1>
-                                <p className='py-5 text-[#a49999] lg:text-[24px] sm:text-[18px]  lg:text-start sm:text-center'>
+                                <p className='py-5 text-[#a49999] lg:text-[24px] sm:text-[18px]  lg:text-start  px-4 text-center lg:ps-0 sm:ps-5'>
                                     From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.
                                 </p>
 
                                
-                                    <div className='flex items-center gap-5 sm:justify-center lg:justify-start sm:py-[20px] lg:py-0'>
+                                    <div className='flex items-center gap-5 justify-center lg:justify-start py-[30px] lg:py-0  '>
                                         <div className='flex  items-center bg-[#f45858] cursor-pointer py-3 px-3 gap-[10px] rounded'>
                                             <button className='text-white font-bold'>Get starte </button>
                                             <FaArrowRightLong className='text-white' />
@@ -122,14 +122,14 @@ export default function Home() {
 function Products({ pdata }) {
     return (
 
-        <div className=' bg-white rounded lg:p-2 shadow-md border sm:px-[30px]  '>
+        <div className=' bg-white rounded lg:p-2 shadow-md px-[15px]  '>
             <div className='relative shadow-md shadow-[#353535] '>
                 <div className='absolute right-[15px] top-[10px] text-[#f35b5b]'>
                     <FaHeart className='text-3xl' />
                 </div>
-                <img src={pdata.image} alt="" className='h-full  mx-auto border' />
+                <img src={pdata.image} alt="" className='h-full  mx-auto' />
             </div>
-            <div className=' p-3 mt-3 shadow-[#353535]  '>
+            <div className=' p-3 mt-3 shadow-[#353535]'>
                 <h1 className='text-[18px] font-[500] items-center '>{pdata.slug}</h1>
                 <p className='line-clamp-2 text-[14px] '>
                     {pdata.description}
